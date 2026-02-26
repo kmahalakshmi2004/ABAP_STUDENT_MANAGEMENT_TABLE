@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service Definition for ZZC_CISTUDENT_052052'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZZC_CISTUDENT_052052'
+  }
+}
+define service ZZUI_CISTUDENT_052_O4052 provider contracts odata_v4_ui {
+  expose ZZC_CISTUDENT_052052;
+}

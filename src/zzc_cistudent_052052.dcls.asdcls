@@ -1,0 +1,6 @@
+@EndUserText.label: 'ZZC_CISTUDENT_052052'
+@MappingRole: true
+define role ZZC_CISTUDENT_052052 {
+  grant select on ZZC_CISTUDENT_052052
+  where INHERITING CONDITIONS FROM ENTITY ZZR_CISTUDENT_052052 REPLACING { ROOT WITH _BaseEntity };
+}

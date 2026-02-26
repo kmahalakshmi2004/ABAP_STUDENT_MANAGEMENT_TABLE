@@ -1,0 +1,55 @@
+managed implementation in class ZZBP_R_CISTUDENT_052052 unique;
+strict ( 2 );
+with draft;
+extensible;
+define behavior for ZZR_CISTUDENT_052052 alias ZzrCistudent052052
+persistent table ZCI_STUDENT_052
+extensible
+draft table ZZCSTDNT_05_D052
+etag master LocalLastChangedAt
+lock master total etag LastChangedAt
+authorization master( global )
+{
+  field ( mandatory : create )
+   StudentID;
+
+  field ( readonly )
+   LocalCreatedBy,
+   LocalCreatedAt,
+   LocalLastChangedBy,
+   LocalLastChangedAt,
+   LastChangedAt;
+
+  field ( readonly : update )
+   StudentID;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZCI_STUDENT_052 corresponding extensible
+  {
+    StudentID = STUDENT_ID;
+    FirstName = FIRST_NAME;
+    LastName = LAST_NAME;
+    DateOfBirth = DATE_OF_BIRTH;
+    Gender = GENDER;
+    Email = EMAIL;
+    PhoneNumber = PHONE_NUMBER;
+    Course = COURSE;
+    City = CITY;
+    LocalCreatedBy = LOCAL_CREATED_BY;
+    LocalCreatedAt = LOCAL_CREATED_AT;
+    LocalLastChangedBy = LOCAL_LAST_CHANGED_BY;
+    LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+    LastChangedAt = LAST_CHANGED_AT;
+  }
+
+}
